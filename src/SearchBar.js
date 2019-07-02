@@ -11,18 +11,26 @@ class SearchBar extends Component {
     }
 
     handleChange=(e)=>{
-        this.setState({
-            ...this.state,
-            locSubset: this.state.locations.filter(item=>{
-                return item.toLowerCase().includes(e.target.value.toLowerCase())
+        if(e.target.value!==""){
+            this.setState({
+                ...this.state,
+                locSubset: this.state.locations.filter(item=>{
+                    return item.toLowerCase().includes(e.target.value.toLowerCase())
+                })
             })
-    })}
+        } else {
+            this.setState({
+                ...this.state,
+                locSubset:[""]
+            })
+        }
+    }
 
     render() {
         return (
             <div className='searchbar'>
-                <label htmlFor="searching">Please type location: </label>
-                <input type="text" onChange={this.handleChange}/>
+                <label htmlFor="searching">Please type location: <br/></label>
+                <input className="center" type="text" onChange={this.handleChange}/>
                 <div className="dropdown-content">
                     <DropDownList locSubset={this.state.locSubset}/>
                 </div>
