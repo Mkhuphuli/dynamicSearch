@@ -1,10 +1,13 @@
-## Learning how to build single page aplications with react and redux and then link the app to fetch data from firebase.
- 
- Skills used:
-   -reactjs
-   -css
-   -javascript
-   -html
+## Goals of Project:
+    - build single page aplications with react and redux
+    - learn how to intergrate app with firestore
+    - deploy the app
+    
+#### Skills used: 
+    -reactjs
+    -css
+    -javascript
+    -html
 
 
 
