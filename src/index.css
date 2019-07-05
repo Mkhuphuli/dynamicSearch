@@ -7,18 +7,29 @@ body {
   position: relative;
   margin: auto;
   margin-top: 25%;
+  margin-left: 33%;
+  width: 33%;
   text-align: center;
 }
 
 .searchbar input[type=text] {
-  border-radius: 5px;
-  background-color: #012831;
+  border-radius: 10px;
+  background-color: #29474e;
   color: white;
   border-color:#2faac5;
+  width: 100%;
 }
 
 .searchbar .dropdown-content {
   display:inline-block;
   color: white;
   width: 100%;
+  background-color:#2b6572;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.searchbar .dropdown-content .dropDownItem:hover{
+  background-color: #064958;
+
 }

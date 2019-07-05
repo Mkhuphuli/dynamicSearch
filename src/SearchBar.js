@@ -1,43 +1,44 @@
 import React, { Component } from 'react';
 import DropDownList from './dropDown';
+import {connect} from 'react-redux';
+import {loadAction,searchAction} from './reducers/rootReducer';
+
 
 class SearchBar extends Component {
-    state={
-        locations:["Durban,SA","Cape Town,SA","PE,SA",
-                    "Johannesburg,SA","Pretoria,SA","Delhi,India",
-                    "Gujarat,India","Big Ben,UK","California,USA","London,UK" ],
-
-         locSubset:[""]
-    }
+    componentDidMount(){
+        //fetch locations from firestore
+        this.props.preloadData()
+    };
 
     handleChange=(e)=>{
-        if(e.target.value!==""){
-            this.setState({
-                ...this.state,
-                locSubset: this.state.locations.filter(item=>{
-                    return item.toLowerCase().includes(e.target.value.toLowerCase())
-                })
-            })
-        } else {
-            this.setState({
-                ...this.state,
-                locSubset:[""]
-            })
-        }
+        this.props.searchLocation(e.target.value)
     }
 
     render() {
         return (
-            <div className='searchbar'>
-                <label htmlFor="searching">Please type location: <br/></label>
-                <input className="center" type="text" onChange={this.handleChange}/>
+            <form onSubmit={this.handleChange} className='searchbar'>
+                <input className="center" type="text" onChange={this.handleChange} placeholder="Search location"/>
                 <div className="dropdown-content">
-                    <DropDownList locSubset={this.state.locSubset}/>
+                    <DropDownList locSubset={this.props.locSubset}/>                                               
                 </div>
-            </div>
+            </form>
         )
     }
-}
+};
+
+const mapStateToProps=(state)=>{
+    return {
+        ...state.locations
+    }
+};
 
 
-export default SearchBar
+const mapDispatchToProps =(dispacth) =>{
+    return {
+        preloadData: () => { dispacth(loadAction()) } ,
+        searchLocation: (searchParam) => { dispacth(searchAction(searchParam)) } 
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(SearchBar)
+
