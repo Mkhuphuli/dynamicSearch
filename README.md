@@ -1,5 +1,7 @@
 ## Goals of Project:
+    -complete zaio reactjs challenge
     - build single page aplications with react and redux
+    - get comfortable with working with reducers and actions along with react
     - learn how to intergrate app with firestore
     - deploy the app
     
