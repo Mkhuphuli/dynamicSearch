@@ -1,10 +1,10 @@
-Learning how to build single page aplications with react and redux and then link the app to fetch data from firebase.
+## Learning how to build single page aplications with react and redux and then link the app to fetch data from firebase.
  
  Skills used:
- -reactjs
- -css
- -javascript
- -html
+   -reactjs
+   -css
+   -javascript
+   -html
 
 
 
