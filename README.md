@@ -11,7 +11,7 @@
 
 
 
-Since the goal was to learn was the the frameworks,  the project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) so that i didnt need to focus on buidling a directory stucture and installing packages.
+Since the goal was to learn the frameworks,  the project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) so that i didnt need to focus on buidling a directory stucture and installing packages.
 
 ## Available Scripts
 
